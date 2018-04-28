@@ -1,0 +1,18 @@
+package com.rule
+
+import com.andresap.model.Product
+
+rule "Oferta para Diamante"
+
+	when 
+		productObject : Product(type=="diamante")
+	then 
+		productObject.setDiscount(15);
+	end
+rule "Oferta para Oro"
+	when
+		productObject : Product(type=="oro")
+	then 
+		productObject.setDiscount(25);
+	end
+	
